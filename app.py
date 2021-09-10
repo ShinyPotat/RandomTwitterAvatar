@@ -17,8 +17,8 @@ api = tweepy.API(auth)
 folders = []
 root = "."
 
-for item in os.listdir("."):
-    if item[0] != "." and os.path.isdir(os.path.join(root, item)):
+for item in os.listdir(root):
+    if not item.startswith('.') and os.path.isdir(os.path.join(root, item)):
         folders.append(item)
 
 folder = random.choice(folders)
